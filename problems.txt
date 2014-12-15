@@ -1,0 +1,11 @@
+this does not work:
+	Array<Array<Piece?>> board = Array({for (col in a..h) Array({for (row in 0..7) null})});
+but this does:
+	Piece? nullPiece = null;
+	Array<Array<Piece?>> board = Array({for (col in a..h) Array({for (row in 0..7) nullPiece})});
+
+this does not work:
+	assertTrue(possibleMoves.any((Move move) => move.piece == king && move.targetPiece == pieceB8 && move.from == location(b, 7) && move.to == location(b, 8)));
+but this does:
+	assertTrue(possibleMoves.any((Move move) => move.piece == king && (move.targetPiece?.equals(pieceB8) else false) && move.from == location(b, 7) && move.to == location(b, 8)));
+

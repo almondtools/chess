@@ -1,0 +1,10 @@
+
+[defaults]
+encoding=Cp1252
+
+[compiler]
+source=source
+source=testSource
+
+[formattool]
+profile=default
